@@ -18,7 +18,7 @@ function Linechart(props: { axis: string }) {
 
   useEffect(() => {
     const db = database;
-    const cartRef = ref(db);
+    const cartRef = ref(db, "/data");
     onValue(cartRef, (snapshot) => {
       const data = snapshot.val();
       if (!!data) {
@@ -33,7 +33,11 @@ function Linechart(props: { axis: string }) {
             } else if (props.axis == "z") {
               newDataList.push(data[key].Data.z);
             }
-            newDataListTs.push(data[key].Data.timestamp);
+            
+            console.log(newDataListTs[newDataListTs.length - 1]);
+            newDataListTs.push(
+              data[key].Data.timestamp - newDataListTs[newDataListTs.length - 1]
+            );
           }
         }
         setDataList(newDataList.slice(-20));

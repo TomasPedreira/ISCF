@@ -66,7 +66,7 @@ class DataCollection():
             print(data)
             
             
-            requests.post(localHost,json.dumps(data))
+            print(requests.post(localHost,json.dumps(data)))
             
             time.sleep(1)
 

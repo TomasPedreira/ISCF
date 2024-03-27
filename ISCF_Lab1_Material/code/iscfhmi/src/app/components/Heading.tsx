@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Heading(props: { text: string }) {
@@ -31,10 +32,20 @@ function Heading(props: { text: string }) {
               </button>
             </div>
           </div>
-          <div className=" grid grid-cols-3 h-10 bg-blue-400">
-            <div className="col-span-1 text-xl flex justify-center items-center">
+          <div className=" grid grid-cols-9 h-10 bg-blue-400">
+            <div className="col-span-3 text-xl flex justify-center items-center">
               <strong>{props.text}</strong>
             </div>
+            <div className="col-span-4" />
+            {props.text == "Home" ? (
+              <div className="col-span-1" />
+            ) : (
+              <div className="col-span-1 text-xl flex justify-center items-center border-solid border-2 bg-blue-500 hover:bg-blue-800 rounded-2xl">
+                <Link href="/">
+                  <strong>Voltar</strong>
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

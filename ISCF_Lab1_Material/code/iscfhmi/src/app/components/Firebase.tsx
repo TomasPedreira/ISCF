@@ -1,7 +1,6 @@
 // firebase.js
-import { initializeApp } from 'firebase/app' // no compat for new SDK
-import { getDatabase } from 'firebase/database'
-
+import { initializeApp } from "firebase/app"; // no compat for new SDK
+import { getDatabase } from "firebase/database";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB0HtYSFohB6kjCRcVFQcaNpiY7sfkVx3I",
@@ -15,8 +14,9 @@ const firebaseConfig = {
   measurementId: "G-1LELM9LD55",
 };
 
-const app = initializeApp(firebaseConfig)
+const app = initializeApp(firebaseConfig);
 
-const database = getDatabase(app)
+const database = getDatabase(app);
+
 
 export default database;

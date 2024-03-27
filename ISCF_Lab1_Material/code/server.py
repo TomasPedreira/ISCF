@@ -5,7 +5,7 @@ import requests
 from pydantic import BaseModel
 
 
-address = "https://iscf1-68bf6-default-rtdb.europe-west1.firebasedatabase.app/"
+address = "https://iscf1-68bf6-default-rtdb.europe-west1.firebasedatabase.app/data"
 
 class Item(BaseModel):
     x: float
@@ -25,7 +25,7 @@ async def root1(lolada: Item):
     }  
 
     requests.post(f"{address}.json", data=json.dumps({"Data":data}))
-
-    return lolada
+    #response = requests.post("http://localhost:3000/api")
+    return "response"
 
 
