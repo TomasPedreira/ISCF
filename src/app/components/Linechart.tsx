@@ -37,8 +37,8 @@ function Linechart(props: { axis: string }) {
             newDataListTs.push(data[key].Data.timestamp);
           }
         }
-        setDataList(newDataList.slice(-20));
-        setDataListTs(newDataListTs.slice(-20));
+        setDataList(newDataList.slice(-15));
+        setDataListTs(newDataListTs.slice(-15));
       } else {
         console.log("Data not found");
       }
