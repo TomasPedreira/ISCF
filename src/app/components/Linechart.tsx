@@ -33,11 +33,8 @@ function Linechart(props: { axis: string }) {
             } else if (props.axis == "z") {
               newDataList.push(data[key].Data.z);
             }
-            
-            console.log(newDataListTs[newDataListTs.length - 1]);
-            newDataListTs.push(
-              data[key].Data.timestamp - newDataListTs[newDataListTs.length - 1]
-            );
+
+            newDataListTs.push(data[key].Data.timestamp);
           }
         }
         setDataList(newDataList.slice(-20));
