@@ -41,7 +41,7 @@ function Heading(props: { text: string }) {
               <div className="col-span-1" />
             ) : (
               <div className="col-span-1 text-xl flex justify-center items-center border-solid border-2 bg-blue-500 hover:bg-blue-800 rounded-2xl">
-                <Link href="/home">
+                <Link href="/">
                   <strong>Voltar</strong>
                 </Link>
               </div>
