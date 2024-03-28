@@ -14,7 +14,7 @@ interface DataItem {
 
 function Linechart(props: { axis: string }) {
   const [dataList, setDataList] = useState<number[]>([]);
-  const [dataListTs, setDataListTs] = useState<number[]>([]);
+  const [dataListTs, setDataListTs] = useState<string[]>([]);
 
   useEffect(() => {
     const db = database;
@@ -23,7 +23,7 @@ function Linechart(props: { axis: string }) {
       const data = snapshot.val();
       if (!!data) {
         const newDataList: number[] = [];
-        const newDataListTs: number[] = [];
+        const newDataListTs: string[] = [];
         for (const key in data) {
           if (Object.prototype.hasOwnProperty.call(data, key)) {
             if (props.axis == "x") {
@@ -34,7 +34,7 @@ function Linechart(props: { axis: string }) {
               newDataList.push(data[key].Data.z);
             }
 
-            newDataListTs.push((data[key].Data.timestamp - newDataListTs[0])/1000);
+            newDataListTs.push(data[key].Data.timestamp);
           }
         }
         setDataList(newDataList.slice(-15));
