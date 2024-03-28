@@ -34,7 +34,7 @@ function Linechart(props: { axis: string }) {
               newDataList.push(data[key].Data.z);
             }
 
-            newDataListTs.push(data[key].Data.timestamp);
+            newDataListTs.push((data[key].Data.timestamp - newDataListTs[0])/1000);
           }
         }
         setDataList(newDataList.slice(-15));
