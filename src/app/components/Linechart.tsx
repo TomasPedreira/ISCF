@@ -48,9 +48,10 @@ function Linechart(props: { axis: string }) {
   return (
     <div>
       <LineChart
-        xAxis={[{ data: dataListTs }]}
+        xAxis={[{scaleType: 'point', data: dataListTs }]}
         series={[
           {
+            curve: "linear",
             data: dataList,
             showMark: false,
           },
