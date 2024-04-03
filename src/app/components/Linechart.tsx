@@ -52,6 +52,7 @@ function Linechart(props: { axis: string }) {
         series={[
           {
             data: dataList,
+            showMark: false,
           },
         ]}
         width={450}

@@ -2,15 +2,19 @@
 import { NextResponse } from "next/server";
 import React, { useState } from "react";
 import Linechart from "../components/Linechart";
+import { getDatabase, ref, child, push, update } from "firebase/database";
+import database from "../components/Firebase";
 import Heading from "../components/Heading";
 function Dashboard() {
   const [time, setTime] = useState("1");
 
   const handleSubmit = async (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    const submitData = { time };
-
-  }
+    const submitData = { time: time };
+    const db = database;
+    const cartRef = ref(db, "/config");
+    update(cartRef, submitData); // Wrap submitData inside an array
+  };
 
   return (
     <>
@@ -47,7 +51,7 @@ function Dashboard() {
               type="text"
               name="time"
               value={time}
-              placeholder={time}
+              placeholder={time.toString()} // Convert time to a string
               onChange={(e) => setTime(e.target.value)}
               className="border-solid border-blue-500 border-4  p-2 px-4 rounded outline-none w-1/3"
             />
