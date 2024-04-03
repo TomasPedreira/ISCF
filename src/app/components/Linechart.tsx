@@ -14,7 +14,7 @@ interface DataItem {
 
 function Linechart(props: { axis: string }) {
   const [dataList, setDataList] = useState<number[]>([]);
-  const [dataListTs, setDataListTs] = useState<string[]>([]);
+  const [dataListTs, setDataListTs] = useState<number[]>([]);
 
   useEffect(() => {
     const db = database;
@@ -23,7 +23,7 @@ function Linechart(props: { axis: string }) {
       const data = snapshot.val();
       if (!!data) {
         const newDataList: number[] = [];
-        const newDataListTs: string[] = [];
+        const newDataListTs: number[] = [];
         for (const key in data) {
           if (Object.prototype.hasOwnProperty.call(data, key)) {
             if (props.axis == "x") {
