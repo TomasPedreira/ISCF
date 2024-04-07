@@ -47,10 +47,10 @@ function Dashboard() {
         </div>
         <div className="row-span-4 grid  grid-cols-3 gap-10">
           <div className=" border-solid border-white border-4 col-span-1 text-xl flex justify-center items-center bg-blue-100 mx-4">
-            <Linechart axis="x" logged={logged}/>
+            <Linechart axis="x" logged={logged} />
           </div>
           <div className="border-solid border-white border-4 col-span-1 text-xl flex justify-center items-center bg-blue-100 mx-4">
-            <Linechart axis="y" logged={logged}/>
+            <Linechart axis="y" logged={logged} />
           </div>
           <div className="border-solid border-white border-4 col-span-1 text-xl flex justify-center items-center bg-blue-100 mx-4">
             <Linechart axis="z" logged={logged} />
@@ -63,10 +63,9 @@ function Dashboard() {
               className=" col-span-2 flex justify-center items-center text-black"
             >
               <input
-                type="text"
+                type="number"
                 name="time"
-                value={time}
-                placeholder={time.toString()} // Convert time to a string
+                placeholder="Sample Time" // Convert time to a string
                 onChange={(e) => setTime(e.target.value)}
                 className="border-solid border-blue-500 border-4  p-2 px-4 rounded outline-none w-1/3"
               />
